@@ -1,5 +1,5 @@
 import XCTest
-@testable import swift_quantum_circuit
+@testable import SwiftQuantumCircuit
 
 final class swift_quantum_circuitTests: XCTestCase {
     func testExample() throws {

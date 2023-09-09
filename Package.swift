@@ -4,20 +4,32 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-quantum-circuit",
+    name: "SwiftQuantumCircuit",
+    platforms: [
+        .macOS(.v12),
+        .iOS(.v15),
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "swift-quantum-circuit",
-            targets: ["swift-quantum-circuit"]),
+            name: "SwiftQuantumCircuit",
+            targets: ["SwiftQuantumCircuit"]),
+    ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        /*.package(   url: "https://github.com/AdamSmith-physics/swift-tensor.git",
+                    branch: "2-convert-to-library")*/
+        .package(path: "../swift-tensor")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "swift-quantum-circuit"),
+            name: "SwiftQuantumCircuit",
+            dependencies: ["SwiftTensor"],
+            path: "Sources/swift-quantum-circuit"),
         .testTarget(
             name: "swift-quantum-circuitTests",
-            dependencies: ["swift-quantum-circuit"]),
+            dependencies: ["SwiftQuantumCircuit"]),
     ]
 )
