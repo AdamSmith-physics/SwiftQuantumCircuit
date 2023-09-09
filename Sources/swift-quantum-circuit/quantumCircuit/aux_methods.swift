@@ -1,6 +1,6 @@
 
 infix operator **: MultiplicationPrecedence
-func **(base: Int, exponent: Int) -> Int {
+public func **(base: Int, exponent: Int) -> Int {
     return power(base, exponent)
 }
 
