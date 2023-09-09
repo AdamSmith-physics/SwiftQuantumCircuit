@@ -3,8 +3,8 @@ import SwiftTensor
 
 public class QuantumState: Codable {
 
-    var state: Tensor = Tensor()
-    var N: Int = 0
+    public var state: Tensor = Tensor()
+    public var N: Int = 0
 
     init() {}
 
@@ -23,7 +23,7 @@ public class QuantumState: Codable {
         self.state = state
     }
     
-    static func == (lhs: QuantumState, rhs: QuantumState) -> Bool {
+    public static func == (lhs: QuantumState, rhs: QuantumState) -> Bool {
         return
             lhs.state == rhs.state &&
             lhs.N == rhs.N
