@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swifttensor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AdamSmith-physics/SwiftTensor.git",
+      "state" : {
+        "branch" : "2-convert-to-library",
+        "revision" : "770d4525c1977e5cd924c5f3ff217dd2123509d5"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -17,9 +17,9 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        /*.package(   url: "https://github.com/AdamSmith-physics/swift-tensor.git",
-                    branch: "2-convert-to-library")*/
-        .package(path: "../swift-tensor")
+        .package(   url: "https://github.com/AdamSmith-physics/SwiftTensor.git",
+                    branch: "2-convert-to-library")
+        //.package(name: "SwiftTensor", path: "../SwiftTensor")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
