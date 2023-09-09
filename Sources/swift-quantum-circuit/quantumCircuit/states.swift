@@ -6,9 +6,9 @@ public class QuantumState: Codable {
     public var state: Tensor = Tensor()
     public var N: Int = 0
 
-    init() {}
+    public init() {}
 
-    init(_ N: Int) {
+    public init(_ N: Int) {
         self.N = N
         var stateVector = Array(repeating: 0.0, count: 2**N - 1)
         stateVector = [1.0] + stateVector
@@ -17,7 +17,7 @@ public class QuantumState: Codable {
                         shape: Array(repeating: 2, count: N))
     }
 
-    init(state: Tensor) {
+    public init(state: Tensor) {
         // Add checks!!!!!
         self.N = state.shape.count
         self.state = state
@@ -29,11 +29,11 @@ public class QuantumState: Codable {
             lhs.N == rhs.N
     }
     
-    func probabilities() -> [Double] {
+    public func probabilities() -> [Double] {
         return (state .* state.conj).real
     }
     
-    func phases() -> [Double] {
+    public func phases() -> [Double] {
         var returnVals: [Double] = []
         for ii in 0..<state.real.count {
             let tempPhase = atan2(state.imag[ii], state.real[ii])
@@ -42,7 +42,7 @@ public class QuantumState: Codable {
         return returnVals
     }
     
-    func phases_2pi() -> [Double] {
+    public func phases_2pi() -> [Double] {
         var returnVals: [Double] = []
         for ii in 0..<state.real.count {
             let tempPhase = atan2(state.imag[ii], state.real[ii]) / (2*pi)
@@ -51,7 +51,7 @@ public class QuantumState: Codable {
         return returnVals
     }
     
-    func measure(shots: Int, qubits: [Int]) -> [String : Int] {
+    public func measure(shots: Int, qubits: [Int]) -> [String : Int] {
         // speed improvement needed!
 
         var probabilities: [Double] = self.probabilities()
