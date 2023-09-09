@@ -33,7 +33,7 @@ public func cumsum(_ array: [Double]) -> [Double] {
     return indices.map{ array[0...$0].reduce(0){ $0 + $1 } }
 }
 
-func num2bin(num : Int, toSize: Int) -> String {
+public func num2bin(num : Int, toSize: Int) -> String {
     let string = String(num, radix: 2)
     var padded = string
     for _ in 0..<(toSize - string.count) {
@@ -43,7 +43,7 @@ func num2bin(num : Int, toSize: Int) -> String {
 }
 
 
-extension String {
+public extension String {
 
     var length: Int {
         return count
